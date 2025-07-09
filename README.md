@@ -34,10 +34,10 @@ A RAG (Retrieval-Augmented Generation) based chatbot that provides solutions to 
 
 ## 🚀 Installation
 
-  Clone the repository:
-   ```bash
-   git clone <your-repository-url>
-   cd <repository-name>
+Clone the repository:
+bash
+git clone <your-repository-url>
+cd <repository-name>
 
    python -m venv venv
 # On Windows: venv\Scripts\activate
