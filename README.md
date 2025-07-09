@@ -1,52 +1,58 @@
-# AIChatbotPDF
-Build a chat app using a large language model. I net out how retrieval augmented generation builds on LLMs, then I show how custom data, like a PDF, can be loaded and used for more meaningful, insightful chat responses.
+# LeetCode Solution Bot
 
-LeetCode Solution Bot - Project Explanation
-Project Overview
-This is a Retrieval-Augmented Generation (RAG) based chatbot specifically designed to provide solutions to LeetCode problems. It combines the power of large language models with your personal collection of LeetCode solutions stored in a PDF document.
+A RAG (Retrieval-Augmented Generation) based chatbot that provides solutions to LeetCode problems using a custom knowledge base.
 
-How It Works
-Document Processing:
-The application loads your Leetcode.pdf file containing solutions
-It splits the document into manageable chunks using text splitting
-These chunks are converted into numerical vectors (embeddings) for efficient searching
-Query Processing:
-When you ask a question, the system searches through the document chunks
-It finds the most relevant sections containing similar information
-These relevant sections are then used as context for generating an answer
-Response Generation:
-The system uses Groq's LLM (Language Model) to generate responses
-The model is instructed to only use information from the provided document
-If the answer isn't found in the document, it will say so instead of making up information
-Key Components
-User Interface:
-Built with Streamlit for a clean, web-based chat interface
-Maintains conversation history during the session
-Backend:
-Uses LangChain for document processing and retrieval
-Implements vector search to find relevant information
-Integrates with Groq's API for fast LLM inference
-Knowledge Base:
-Your Leetcode.pdf serves as the knowledge base
-The system only provides answers based on this document
-Why This Approach?
-Accuracy: By grounding responses in your document, it provides more accurate solutions
-Privacy: Your solutions stay on your machine (the PDF is processed locally)
-Customization: You can update the knowledge base by simply modifying the PDF
-Ideal Use Case
-This bot is perfect for:
+## 🚀 Features
 
-Quickly looking up solutions you've previously worked on
-Reviewing different approaches to problems
-Studying for technical interviews
-Maintaining a personal knowledge base of coding solutions
-Limitations
-The quality of answers depends on the content of your PDF
-It can only answer questions about problems that are included in your document
-The system requires an internet connection to access the Groq API
-Future Enhancements
-Support for multiple document formats
-Adding code execution to test solutions
-Implementing user authentication
-Adding support for different programming languages
-Including problem difficulty levels and categorie
+- Answers LeetCode problems using a custom knowledge base
+- Maintains conversation history
+- Uses Groq's LLM for generating responses
+- Processes and retrieves information from PDF documents
+
+## 🛠 How It Works
+
+### Document Processing
+- Loads your `Leetcode.pdf` file containing solutions
+- Splits the document into manageable chunks
+- Converts text into numerical vectors (embeddings) for efficient searching
+
+### Query Handling
+- Searches through document chunks when you ask a question
+- Finds the most relevant sections containing similar information
+- Uses these sections as context for generating accurate answers
+
+### Response Generation
+- Uses Groq's LLM to generate responses
+- Strictly uses only the provided document context
+- Clearly indicates when information isn't available in the knowledge base
+
+## 📦 Prerequisites
+
+- Python 3.8+
+- Groq API key
+- LeetCode solutions in PDF format
+
+## 🚀 Installation
+
+  Clone the repository:
+   ```bash
+   git clone <your-repository-url>
+   cd <repository-name>
+
+   python -m venv venv
+# On Windows: venv\Scripts\activate
+# On Unix/MacOS: source venv/bin/activate
+
+pip install -r requirements.txt
+pip install -r requirements.txt
+GROQ_API_KEY=your_groq_api_key_here
+streamlit run phase1.py
+
+
+.
+├── phase1.py          # Main application
+├── Leetcode.pdf       # Your LeetCode solutions (not included)
+├── .env               # Environment variables
+├── requirements.txt   # Dependencies
+└── README.md          # This file
+
